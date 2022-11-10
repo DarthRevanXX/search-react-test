@@ -58,18 +58,20 @@ export const SearchResults = (props) => {
           searchResultsError &&
           searchResults === undefined && <p>Something went wrong!</p>}
 
-        {searchHistory.map((item, index) => {
-          return (
-            <div
-              key={index}
-              style={{
-                padding: '10px',
-              }}
-            >
-              History: {item}{' '}
-            </div>
-          );
-        })}
+        {!searchResultsLoading &&
+          !searchResultsError &&
+          searchHistory.map((item, index) => {
+            return (
+              <div
+                key={index}
+                style={{
+                  padding: '10px',
+                }}
+              >
+                History: {item}{' '}
+              </div>
+            );
+          })}
 
         {searchResultsLoading !== true && searchResults !== undefined && (
           <div>
