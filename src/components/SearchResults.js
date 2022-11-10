@@ -58,7 +58,7 @@ export const SearchResults = (props) => {
           searchResultsError &&
           searchResults === undefined && <p>Something went wrong!</p>}
 
-        {!searchResultsLoading &&
+        {!searchResultsError &&
           !searchResultsError &&
           searchHistory.map((item, index) => {
             return (
@@ -73,7 +73,7 @@ export const SearchResults = (props) => {
             );
           })}
 
-        {searchResultsLoading !== true && searchResults !== undefined && (
+        {!searchResultsLoading && searchResults !== undefined && (
           <div>
             {searchResults.splice(0, 5).map((user) => (
               <li key={user.id}>

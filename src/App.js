@@ -1,4 +1,3 @@
-import './App.css';
 import { useState, useEffect } from 'react';
 import React from 'react';
 import { SearchResults } from './components/SearchResults';
